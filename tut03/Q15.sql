@@ -1,5 +1,6 @@
 CREATE TABLE players (
-    name text PRIMARY KEY
+    name text PRIMARY KEY,
+    playsFor text NOT NULL
 );
 
 CREATE TABLE teams (
@@ -7,7 +8,7 @@ CREATE TABLE teams (
     captain text REFERENCES players (name)
 );
 
-ALTER TABLE players ADD COLUMN playsFor text REFERENCES teams (name);
+ALTER TABLE players ADD FOREIGN KEY (playsFor) REFERENCES teams (name);
 
 CREATE TABLE fans (
     name text PRIMARY KEY
