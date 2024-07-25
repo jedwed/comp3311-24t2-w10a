@@ -1,0 +1,20 @@
+R(A, B, C, D)
+F = {C → D,   C → A,   B → C}
+
+a. Candidate keys of table R
+B+ = {B, C, D, A} -> B is a candidate key
+C+ = {C, D, A} -> C is not a candidate key
+
+B is the candidate key
+
+b. Is relation R in BCNF
+
+- C -> D
+1. C -> D not trivial
+2. C is not a superkey
+C -> D violates condition for functional dependency
+
+Hence schema is not in BCNF.
+
+c. Is relation R in 3NF
+Left as an exercise to the reader

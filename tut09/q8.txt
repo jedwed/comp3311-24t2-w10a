@@ -1,0 +1,32 @@
+Attributes
+acct# - unique account indentifier
+branch# - unique branch identifier
+tfn - unique customer identifier (tax file number)
+kind - type of account (savings, cheque, ...)
+balance - amount of money in account
+city - city where branch is located
+name - customer's name
+
+Unnormalised relation R(acct#, branch#, tfn, kind, balance, city, name)
+
+Each account is held at a specific branch, 
+but a customer may hold more than one account 
+and an account may have more than one associated customer.
+
+Q: Normalise the relation into 3NF
+- tfn -> name
+- acct# -> balance, kind, branch#
+- branch# -> city
+
+candidate key: tfn, acct#
+
+Q: Decompose into 3NF
+1. Minimal cover: we already have the minimal cover
+2. 
+Customer(tfn, name)
+Account(acct#, balance, kind, branch#)
+Branch(branch#, city)
+
+3.
+Because candidate key tfn, acct# is not in any of the tables
+Owns(tfn, acct#)

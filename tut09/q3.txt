@@ -1,0 +1,80 @@
+Consider the relation R(A,B,C,D,E) and the  
+set of functional dependencies 
+F = { A → B, BC → E, ED → A }
+
+a. List all of the candidate keys for R.
+- The candidate key(s) have an attribute closure including all attributes of R
+
+!Tip: If an attribute doesn't exist in the RHS of any fds: it has to be in the candidate key
+
+- ACD+ + {A, C, D, B, E}: ACD is a candidate key
+- BCD+ = {C, D, B, E, A}: BCD is a candidate key
+- CDE+ = {C, D, E, A, B}: CDE is also candidate key
+
+ACDE is a superkey but NOT a candidate key (not minimal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+X -> X
+XY -> X
+
+
+
+R(A,B,C,D,E)
+F = {A -> B, BC -> E, ED -> A}
+Candidate keys: BCD and CDE and ACD
+b. Is R in third normal form (3NF)?
+
+Loop through all functional dependencies
+
+- A -> B 
+1. A -> B is not trivial X
+2. A is not a superkey X
+3. B is part of candidate key BCD
+
+Functional dependency meets requirements for 3NF but Not BCNF
+
+- BC -> E
+1. BC -> E is not trivial X
+2. BC is not a superkey X
+3. E is part of candidate key CDE
+
+Functional dependency meets requirements for 3NF but not BCNF
+
+- ED -> A
+1. ED -> A Not trivial
+2. ED not a superkey
+3. A is part of candidate key ACD
+
+Functional dependency meets requirements for 3NF
+
+Hence, schema is in 3NF but not in BCNF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c. Is R in Boyce-Codd normal form (BCNF)?
